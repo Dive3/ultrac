@@ -1,0 +1,30 @@
+<% include _header %>
+
+<h1>Actualizar inventario de joyería</h1>
+
+
+
+<form action="/inventariojoyas" method="post">
+    <div class="form-group">
+        <input name="nombre" type="text" class="form-control"
+        placeholder="Nombre del artículo" required autofocus/>
+    </div>
+    <div class="form-group">
+        <input name="descripcion" type="text" class="form-control"
+        placeholder="Características del artículo" required/>
+    </div>
+    <div class="form-group">
+        <input name="precio" type="text" class="form-control"
+        placeholder="Precio del artículo" required/>
+    </div>
+    <div class="form-group">
+        <input name="cantidad" type="text" class="form-control"
+        placeholder="Cantidad de copias" required/>
+    </div>
+    
+
+
+    <input type="submit" value="añadir" class="btn btn-primary btn-block"/>
+</form>
+
+<% include _footer %>

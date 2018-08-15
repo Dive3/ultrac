@@ -1,0 +1,36 @@
+<% include _header %>
+
+    <h1>Nuevo usuario</h1>
+
+    <form action="/signup" method="post">
+        <div class="form-group">
+            <input name="username" type="text" class="form-control" placeholder="Nombre de usuario" required autofocus/>
+        </div>
+        <div class="form-group">
+            <input name="password" type="password" class="form-control" placeholder="Contraseña" required/>
+        </div>
+        <div class="form-group">
+            <label for="role">Seleccionar el rol del nuevo usuario</label>
+            <select class="form-control" name="role" type="text">
+                <option>Gerente</option>
+                <option>Ventas</option>
+                <option>Produccion</option>
+                <option>JoyeriaV</option>
+                <option>JoyeruaG</option>
+            </select>
+        <div class="form-group">
+    <br>
+        <a>Datos Generales</a>
+            <input name="nombre" type="text" class="form-control" placeholder="Nombre" required autofocus/>
+        </div>            
+        </div>
+        <div class="form-group">
+            <input name="apellido_p" type="text" class="form-control" placeholder="Apellido Paterno" required autofocus/>
+        </div>
+        <div class="form-group">
+            <input name="apellido_m" type="text" class="form-control" placeholder="Apellido Materno" required autofocus/>
+        </div>
+        <input type="submit" value="Registrarse" class="btn btn-primary btn-block" />
+    </form>
+
+    <% include _footer %>

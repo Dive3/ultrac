@@ -1,0 +1,40 @@
+
+#carruself{
+    padding-top: 1%;
+    padding: 1%;
+    height: 500px;
+}
+
+#indexpublico{
+    background-color:#AFEEEE;
+    display: flex;
+    padding: 4%;
+    margin-top: 5%;
+}
+#letreros, #decoraciones, #joyeria{
+    margin-left: 5%;
+}
+
+#administracion{
+    margin-top: 5%;
+}
+footer {
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    width: 100%;
+ }
+
+.fa {
+    font-size: 30px;
+    width: 50px;
+    text-align: left;
+    text-decoration: none;
+}
+
+#titulo1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: teal;
+    text-align: center;
+
+}

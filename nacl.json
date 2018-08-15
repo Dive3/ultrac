@@ -1,0 +1,118 @@
+[{
+    "group":"Gerente",
+    "permissions":[{
+        "resource":"*",
+        "methods":"*",
+        "action":"allow"
+    }]
+},
+{
+    "group":"Ventas",
+    "permissions":[{
+        "resource":"/login",
+        "methods":["GET","POST"],
+        "action":"allow"
+    },
+    {
+    "resource":"/edit",
+    "methods":["GET","POST"],
+    "action":"allow"
+    },
+    {
+        "resource":"/signup",
+        "methods":["GET","POST"],
+        "action":"allow"
+    },
+    {
+        "resource":"/logout",
+        "methods":"*",
+        "action":"allow"
+    }]
+},
+{
+    "group":"usuario",
+    "permissions":[{
+        "resource":"/login",
+        "methods":["GET","POST"],
+        "action":"allow"
+    },
+    {
+    "resource":"/edit",
+    "methods":["GET","POST"],
+    "action":"allow"
+    },
+    {
+        "resource":"/signup",
+        "methods":["GET","POST"],
+        "action":"allow"
+    },
+    {
+        "resource":"/logout",
+        "methods":"*",
+        "action":"allow"
+    },
+    {
+        "resource":"/signup",
+        "methods":"*",
+        "action":"allow"
+    }]
+},
+{
+    "group":"Produccion",
+    "permissions":[{
+        "resource":"*",
+        "methods":["GET"],
+        "action":"allow"
+    }]
+},
+{
+    "group":"JoyeriaG",
+    "permissions":[{
+        "resource":"/citas",
+        "methods":"*",
+        "action":"allow"
+    },
+    {
+        "resource":"/addCitas",
+        "methods":["GET","POST"],
+        "action":"allow"
+    },
+    {
+        "resource":"/edit",
+        "methods":["GET","POST"],
+        "action":"allow"
+    },
+    {
+        "resource":"/login",
+        "methods":["GET","POST"],
+        "action":"allow"
+    },
+    {
+        "resource":"/logout",
+        "methods":"*",
+        "action":"allow"
+}]
+},
+{
+    "group":"JoyeriaV",
+    "permissions":[{
+        "resource":"/citas",
+        "methods":"*",
+        "action":"allow"
+    },
+    {
+        "resource":"/edit",
+        "methods":["GET","POST"],
+        "action":"allow"
+    },
+    {
+        "resource":"/login",
+        "methods":["GET","POST"],
+        "action":"allow"
+    },
+    {
+        "resource":"/logout",
+        "methods":"*",
+        "action":"allow"
+    }]
+}]

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Ultracero</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.7/css/mdb.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #141515;">
+  <a class="navbar-brand" href="#"> <img src="/ultracero.jpg" width="30" height="30" class="d-inline-block align-top">ULTRACERO</a><small class="text-muted">Productos de acero inoxidable</small>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+    <% if (currentUsuario) { %>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/indexpublic" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Hola, <%= currentUsuario.name() %> </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/edit">Editar</a>
+          <a class="dropdown-item" href="/profile">Información</a>
+          <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/logout">Salir</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled"><span class="badge"><%= currentUsuario.usrRole() %> </span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/ventas"> Venta </a>
+      </li>      
+      <li class="nav-item">
+        <a class="nav-link" href="/joyas"> Joyería </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/signup"> Registrar </a>
+      </li>
+      <% } else { %>
+        <li class="nav-item">
+            <a class"nav-link" href="/login"> Entrar</a>
+        </li>
+                       
+      <% } %>
+    </ul>
+  </div>
+</nav>

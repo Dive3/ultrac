@@ -1,0 +1,29 @@
+<% include _header %>
+<div class="container">
+<h1> Joyería <a href="/inventariojoyas" class="btn btn-light pull-right" role="button"> Agregar nevos productos </a></h1>
+
+<% joyas.forEach((joya) => { %>
+<table class="table">
+<thead class="thead-dark">
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Cantidad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= joya.nombre %></td>
+      <td><%= joya.descripcion %></td>
+      <td><%= joya.precio %></td>
+      <td><%= joya.cantidad %></td>
+    </tr>
+</table>
+    <% }) %>
+ 
+</div>
+</div>
+
+
+<% include _footer %>

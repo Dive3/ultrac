@@ -22,7 +22,7 @@ mongoose.connect("mongodb://Diana:Veronica3@ds121282.mlab.com:21282/ultracero")
 })
 .catch(err=>{
    console.log(err)
-})}
+})
 
 passportsetup();
 

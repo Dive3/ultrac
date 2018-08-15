@@ -1,4 +1,12 @@
 [{
+    "group":"usuario",
+    "permissions":[{
+        "resource":"/login",
+        "methods":["GET","POST"],
+        "action":"allow"
+    }]
+},
+{
     "group":"Gerente",
     "permissions":[{
         "resource":"*",
@@ -14,66 +22,12 @@
         "action":"allow"
     },
     {
-    "resource":"/edit",
+    "resource":"/ventas",
     "methods":["GET","POST"],
     "action":"allow"
     },
     {
-        "resource":"/signup",
-        "methods":["GET","POST"],
-        "action":"allow"
-    },
-    {
-        "resource":"/logout",
-        "methods":"*",
-        "action":"allow"
-    }]
-},
-{
-    "group":"usuario",
-    "permissions":[{
-        "resource":"/login",
-        "methods":["GET","POST"],
-        "action":"allow"
-    },
-    {
-    "resource":"/edit",
-    "methods":["GET","POST"],
-    "action":"allow"
-    },
-    {
-        "resource":"/signup",
-        "methods":["GET","POST"],
-        "action":"allow"
-    },
-    {
-        "resource":"/logout",
-        "methods":"*",
-        "action":"allow"
-    },
-    {
-        "resource":"/signup",
-        "methods":"*",
-        "action":"allow"
-    }]
-},
-{
-    "group":"Produccion",
-    "permissions":[{
-        "resource":"*",
-        "methods":["GET"],
-        "action":"allow"
-    }]
-},
-{
-    "group":"JoyeriaG",
-    "permissions":[{
-        "resource":"/citas",
-        "methods":"*",
-        "action":"allow"
-    },
-    {
-        "resource":"/addCitas",
+        "resource":"/newVenta",
         "methods":["GET","POST"],
         "action":"allow"
     },
@@ -83,7 +37,35 @@
         "action":"allow"
     },
     {
-        "resource":"/login",
+        "resource":"/profile",
+        "methods":["GET","POST"],
+        "action":"allow"
+    },
+    {
+        "resource":"/logout",
+        "methods":"*",
+        "action":"allow"
+    }]
+},
+{
+    "group":"JoyeriaG",
+    "permissions":[{
+        "resource":"/joyas",
+        "methods":"*",
+        "action":"allow"
+    },
+    {
+        "resource":"/edit",
+        "methods":["GET","POST"],
+        "action":"allow"
+    },
+    {
+        "resource":"/inventariojoyas",
+        "methods":["GET","POST"],
+        "action":"allow"
+    },
+    {
+        "resource":"/profile",
         "methods":["GET","POST"],
         "action":"allow"
     },
@@ -96,12 +78,17 @@
 {
     "group":"JoyeriaV",
     "permissions":[{
-        "resource":"/citas",
+        "resource":"/joyas",
         "methods":"*",
         "action":"allow"
     },
     {
         "resource":"/edit",
+        "methods":["GET","POST"],
+        "action":"allow"
+    },
+    {
+        "resource":"/profile",
         "methods":["GET","POST"],
         "action":"allow"
     },

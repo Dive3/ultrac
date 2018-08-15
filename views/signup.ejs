@@ -1,6 +1,6 @@
 <% include _header %>
-
-    <h1>Nuevo usuario</h1>
+<div class="container" id="registro">
+    <h1 id="titulo1">Nuevo usuario</h1>
 
     <form action="/signup" method="post">
         <div class="form-group">
@@ -12,11 +12,11 @@
         <div class="form-group">
             <label for="role">Seleccionar el rol del nuevo usuario</label>
             <select class="form-control" name="role" type="text">
-                <option>Gerente</option>
                 <option>Ventas</option>
                 <option>Produccion</option>
                 <option>JoyeriaV</option>
-                <option>JoyeruaG</option>
+                <option>JoyeriaG</option>
+                <option>Gerente</option>
             </select>
         <div class="form-group">
     <br>
@@ -30,7 +30,7 @@
         <div class="form-group">
             <input name="apellido_m" type="text" class="form-control" placeholder="Apellido Materno" required autofocus/>
         </div>
-        <input type="submit" value="Registrarse" class="btn btn-primary btn-block" />
+        <input type="submit" value="Registrarse" class="btn btn-dark btn-block" />
     </form>
 
     <% include _footer %>

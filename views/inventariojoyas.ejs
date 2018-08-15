@@ -4,7 +4,7 @@
 
 
 
-<form action="/inventariojoyas" method="post">
+<form action="/inventariojoyas" method="post" enctype="multipart/form-data">
     <div class="form-group">
         <input name="nombre" type="text" class="form-control"
         placeholder="Nombre del artículo" required autofocus/>
@@ -20,6 +20,9 @@
     <div class="form-group">
         <input name="cantidad" type="text" class="form-control"
         placeholder="Cantidad de copias" required/>
+    </div>
+    <div class="from-group">
+    <input id="archivo"type="file"name="foto"class="file">
     </div>
     
 

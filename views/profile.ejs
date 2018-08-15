@@ -3,5 +3,24 @@
 <h1><%= currentUsuario.name() %>, <%= currentUsuario.apellido() %></h1>
 <h1><%= currentUsuario.usrRole() %></h1>
 
+<% if (currentUsuario) { %>
+<div class="container" id="administracion">
+<h1 id="titulo1"> ¡Bienvenido al sistema de administracion ultracero!</h1>
+
+<h4> Usuarios registrados: </h4>
+<% usuarios.forEach((usuario) => { %>
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <a> <%= usuario.name() %>, <%= usuario.usrRole() %></a>
+    </div>
+    <% if(usuario.nombre) { %>
+        <div class="panel-body"><%= usuario.nombre %></div>
+</div>
+</div>
+<% } %>
+<% }) %>
+<% } else { %>
+<% } %>
+
 
 <% include _footer %>

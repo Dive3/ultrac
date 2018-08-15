@@ -1,7 +1,9 @@
 <% include _header %>
 
-<h1> ventas! <a href="/newVenta" class="btn btn-light pull-right" role="button"> Agregar nevos productos </a></h1>
+<div class="container" id="venta">
+<h1 id="titulo1"> Ventas en curso <a href="/newVenta" class="btn btn-light pull-right" role="button"> Agregar nevos productos </a></h1>
 
+moment(fecha).format('D [de] MMMM [del] YYYY, h:mm:ss A');
 <% ventas.forEach((venta) => { %>
 <table class="table">
 <thead class="thead-dark">
@@ -23,5 +25,5 @@
  
 </div>
 </div>
-
+</div>
 <% include _footer %>

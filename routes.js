@@ -6,23 +6,23 @@ var Venta = require("./models/ventas")
 var passport = require("passport");
 var acl = require("express-acl");
 
-var moment = require('moment');
 
 //IMAGENES
 var multer=require("multer");
 /*const upload=multer({
     dest:'expedientes/'
-});*/
-var storage =   multer.diskStorage({
-    destination: function (req, file, callback) {
-      callback(null, 'joyas/');
+});*/(null,'public/uploads/')
+var storage = multer.diskStorage({
+    destination:function(req,file,cb){
+    cb(null,'public/uploads/')
     },
     filename: function (req, file, callback) {
-        callback(null, Date.now() + file.originalname);
-    }
-  });
-  var upload = multer({storage : storage}).single("image");
-var router = express.Router();
+        callback(null, file.fieldname + '.jpg');
+      }
+    });
+    var upload = multer({ storage : storage });
+    var router = express.Router();
+
 
 //ROLES
 acl.config({
@@ -119,6 +119,12 @@ router.post("/inventariojoyas",(req, res, next)=>{
     var descripcion = req.body.descripcion;
     var precio = req.body.precio;
     var cantidad = req.body.cantidad;
+    if (req.file == undefined) {
+        buffer.foto = 'n/a';
+       } else {
+        buffer.foto = req.file.filename;
+       }
+       
 
     Joya.findOne({ nombre: nombre }, (err, joya) =>{
         if(err){
@@ -129,7 +135,7 @@ router.post("/inventariojoyas",(req, res, next)=>{
             descripcion: descripcion,
             precio: precio,
             cantidad: cantidad,
-    
+            
         });
         newJoya.save(next);
         return res.redirect("/joyas");

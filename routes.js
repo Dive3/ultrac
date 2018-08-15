@@ -120,11 +120,6 @@ router.post("/inventariojoyas",(req, res, next)=>{
     var precio = req.body.precio;
     var cantidad = req.body.cantidad;
        
-
-    Joya.findOne({ nombre: nombre }, (err, joya) =>{
-        if(err){
-            return next(err);
-        }
         var newJoya = new Joya({
             nombre: nombre,
             descripcion: descripcion,
@@ -135,7 +130,6 @@ router.post("/inventariojoyas",(req, res, next)=>{
         newJoya.save(next);
         return res.redirect("/joyas");
     });
-});
 
 //INVENTARIO DE JOYAS
 router.get("/joyas", (req, res, next) =>{

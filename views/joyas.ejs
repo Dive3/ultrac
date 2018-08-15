@@ -2,7 +2,6 @@
 <div class="container" id="joyeria">
 <h1 id="titulo1"> Joyería <a href="/inventariojoyas" class="btn btn-light pull-right" role="button"> Agregar nevos productos </a></h1>
 
-<% joyas.forEach((joya) => { %>
 <table class="table">
 <thead class="thead-dark">
     <tr>
@@ -12,6 +11,7 @@
       <th scope="col">Cantidad</th>
     </tr>
   </thead>
+  <% joyas.forEach((joya) => { %>>
   <tbody>
     <tr>
       <td><%= joya.nombre %></td>

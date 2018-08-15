@@ -3,22 +3,21 @@
 <div class="container" id="venta">
 <h1 id="titulo1"> Ventas en curso <a href="/newVenta" class="btn btn-light pull-right" role="button"> Agregar nevos productos </a></h1>
 
-moment(fecha).format('D [de] MMMM [del] YYYY, h:mm:ss A');
-<% ventas.forEach((venta) => { %>
+
 <table class="table">
 <thead class="thead-dark">
     <tr>
       <th scope="col">Nombre</th>
       <th scope="col">Descripcion</th>
       <th scope="col">Precio</th>
-      <th scope="col">Cantidad</th>
     </tr>
   </thead>
   <tbody>
+  <% ventas.forEach((venta) => { %>
     <tr>
       <td><%= venta.cliente %></td>
       <td><%= venta.pedido %></td>
-      <td><%= joya.precio %></td>
+      <td><%= venta.precio %></td>
     </tr>
 
     <% }) %>

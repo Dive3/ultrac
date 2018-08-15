@@ -119,11 +119,6 @@ router.post("/inventariojoyas",(req, res, next)=>{
     var descripcion = req.body.descripcion;
     var precio = req.body.precio;
     var cantidad = req.body.cantidad;
-    if (req.file == undefined) {
-        buffer.foto = 'n/a';
-       } else {
-        buffer.foto = req.file.filename;
-       }
        
 
     Joya.findOne({ nombre: nombre }, (err, joya) =>{
@@ -160,22 +155,18 @@ router.get("/newVenta", (req, res) =>{
 });
 
 router.post("/newVenta",(req, res, next)=>{
-    var cliente = req.body.nombre;
-    var producto = req.body.prodcuto;
+    var cliente = req.body.cliente;
+    var producto = req.body.producto;
     var precio = req.body.precio;
 
-    Venta.findOne({ cliente: cliente }, (err, venta) =>{
-        if(err){
-            return next(err);
-        }
+    
         var newVenta = new Venta({
             cliente: cliente,
-            producto: producto,
+            pedido: producto,
             precio: precio,
         });
         newVenta.save(next);
         return res.redirect("/ventas");
-    });
 });
 
 router.get("/ventas", (req, res, next) =>{

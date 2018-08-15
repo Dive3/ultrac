@@ -16,8 +16,14 @@ var passportsetup = require("./passportsetup");
 var app = express();
 
 
-mongoose.connect("mongodb://Diana:Veronica3@ds121282.mlab.com:21282/ultracero")
-//mongoose.connect("mongodb://localhost:27017/Ultra");
+// mongoose.connect("mongodb://Diana:Veronica3@ds121282.mlab.com:21282/ultracero")
+// .then(db =>{
+//    console.log("db is conected")
+// })
+// .catch(err=>{
+//    console.log(err)
+// })
+mongoose.connect("mongodb://localhost:27017/Ultra");
 
 
 passportsetup();

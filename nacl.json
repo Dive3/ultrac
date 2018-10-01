@@ -1,8 +1,8 @@
 [{
     "group":"usuario",
     "permissions":[{
-        "resource":"/login",
-        "methods":["GET","POST"],
+        "resource":"*",
+        "methods":"*",
         "action":"allow"
     }]
 },

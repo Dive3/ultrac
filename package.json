@@ -18,6 +18,7 @@
     "express-acl": "^2.0.2",
     "express-fileupload": "^0.4.0",
     "express-session": "^1.15.6",
+    "flash": "^1.1.0",
     "mdbootstrap": "^4.5.9",
     "moment": "^2.22.2",
     "mongoose": "^5.1.4",

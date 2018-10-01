@@ -4,7 +4,6 @@ var joyaSchema = mongoose.Schema({
     nombre: { type: String, required: true},
     descripcion: { type: String },
     precio: { type: Number },
-    cantidad: { type: Number },
 });
 
 

@@ -2,24 +2,25 @@
 #carruself{
     padding-top: 1%;
     padding: 1%;
-    height: 500px;
+    height: 550px;
 }
 
 #indexpublico{
-    background-color:#AFEEEE;
+    background-color:rgb(31, 3, 3);
     display: flex;
     padding: 4%;
-    margin-top: 5%;
+    margin-top: 4%;
 }
-#letreros, #decoraciones, #joyeria{
+#letreros, #decoraciones, #joyeriapublic{
     margin-left: 5%;
 }
 
 #administracion, #venta, #joyeria, #registro{
     margin-top: 5%;
 }
-footer {
-
+#contact {
+    margin-left: 20%;
+    text-align: center;
  }
 
 .fa {

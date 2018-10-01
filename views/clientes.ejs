@@ -1,0 +1,19 @@
+<% include _header %>
+
+<div class="container" id="venta">
+<h1 id="titulo1"> Agregar nuevo cliente </h1>
+<form action="/clientes" method="post">
+    <div class="form-group">
+        <input name="nombre" type="text" class="form-control" placeholder="Nombre del Cliente" required autofocus/>
+    </div>
+    <div class="form-group">
+        <input name="cantidad" type="text" class="form-control"
+        placeholder="Total pagado" required/>
+    </div>
+
+
+
+    <input type="submit" value="añadir" class="btn btn-dark btn-block"/>
+</form>
+</div>
+<% include _footer %>

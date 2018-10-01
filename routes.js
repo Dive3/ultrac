@@ -24,7 +24,9 @@ var storage = multer.diskStorage({
     var router = express.Router();
 
 
-//ROLES
+// =============================================================================
+//                           ROLES
+// =============================================================================
 acl.config({
     baseUrl:'/',
     defaultRole:'usuario',
@@ -50,6 +52,10 @@ router.use((req, res, next) =>{
 
 router.use(acl.authorize);
 
+// =============================================================================
+//                           INDEX 
+// =============================================================================
+
 router.get("/", (req, res, next) =>{
     Usuario.find()
         .sort({ createdAt: "descending"})
@@ -74,7 +80,9 @@ router.get("/usuarios/:username",(req,res,next) =>{
 });
 
 
-//REGISTRAR USUARIO
+// =============================================================================
+//                           REGISTRAR USUARIOS 
+// =============================================================================
 router.get("/signup", (req, res) =>{
     res.render("signup");
 });
@@ -109,29 +117,32 @@ router.post("/signup",(req, res, next)=>{
 });
 
 
-//AGREGAR JOYAS
-router.get("/inventariojoyas", (req, res) =>{
-    res.render("inventariojoyas");
+// =============================================================================
+//                           AGREGAR JOYAS
+// =============================================================================
+router.get("/addJoyas", (req, res) =>{
+    res.render("addJoyas");
 });
 
-router.post("/inventariojoyas",(req, res, next)=>{
+router.post("/addJoyas",(req, res, next)=>{
     var nombre = req.body.nombre;
     var descripcion = req.body.descripcion;
     var precio = req.body.precio;
-    var cantidad = req.body.cantidad;
        
         var newJoya = new Joya({
             nombre: nombre,
             descripcion: descripcion,
             precio: precio,
-            cantidad: cantidad,
             
         });
         newJoya.save(next);
         return res.redirect("/joyas");
-    });
+});
 
-//INVENTARIO DE JOYAS
+// =============================================================================
+//                           INVENTARIO JOYAS
+// =============================================================================
+
 router.get("/joyas", (req, res, next) =>{
     Joya.find()
         .exec((err, joyas) => {
@@ -143,7 +154,9 @@ router.get("/joyas", (req, res, next) =>{
 });
 
 
-//VENTAS
+// =============================================================================
+//                           VENTAS
+// =============================================================================
 router.get("/newVenta", (req, res) =>{
     res.render("newVenta");
 });
@@ -174,19 +187,23 @@ router.get("/ventas", (req, res, next) =>{
 });
 
 
-//ENTRAR
+// =============================================================================
+//                           INGRESAR
+// =============================================================================
 router.get("/login", (req, res) => {
     res.render("login");
 });
 
 router.post("/login", passport.authenticate("login",{
     successRedirect: "/",
-    failureRedirect: "/login",
+    failureRedirect: "/",
     failureFlash: true
 }));
 
 
-//SALIR
+// =============================================================================
+//                           SALIR 
+// =============================================================================
 router.get("/logout", (req, res) => {
     req.logout();
     res.redirect("/");
@@ -209,12 +226,16 @@ router.post("/addExp",function(req, res) {
         }});
     });
 
-//PERFIL
+// =============================================================================
+//                           PERFIL 
+// =============================================================================
 router.get("/profile", (req, res) => {
     res.render("profile");
 });
 
-    //EDITAR PERFIL
+// =============================================================================
+//                           EDITAR PERFIL 
+// =============================================================================
 router.get("/edit", ensureAuthenticated,(req,res) => {
     res.render("edit");
 });

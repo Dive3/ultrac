@@ -49,7 +49,7 @@ router.get("/", (req, res, next) =>{
             if(err){
                 return next(err);
             }
-            res.render("indexpublic", {usuarios: usuarios});
+            res.render("index", {usuarios: usuarios});
         });
 });
 

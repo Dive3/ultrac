@@ -2,11 +2,11 @@
 #carruself{
     padding-top: 1%;
     padding: 1%;
-    height: 550px;
+    height: 600px;
 }
 
 #indexpublico{
-    background-color:rgb(31, 3, 3);
+    background-color: white;
     display: flex;
     padding: 4%;
     margin-top: 4%;
@@ -35,6 +35,10 @@
     color: teal;
     text-align: center;
 
+}
+
+#redes{
+    margin-left: 20%;
 }
 
 #indexjoyas{

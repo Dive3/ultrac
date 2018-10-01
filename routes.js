@@ -7,21 +7,7 @@ var passport = require("passport");
 var acl = require("express-acl");
 
 
-//IMAGENES
-var multer=require("multer");
-/*const upload=multer({
-    dest:'expedientes/'
-});*/(null,'public/uploads/')
-var storage = multer.diskStorage({
-    destination:function(req,file,cb){
-    cb(null,'public/uploads/')
-    },
-    filename: function (req, file, callback) {
-        callback(null, file.fieldname + '.jpg');
-      }
-    });
-    var upload = multer({ storage : storage });
-    var router = express.Router();
+var router = express.Router();
 
 
 // =============================================================================
@@ -120,6 +106,10 @@ router.post("/signup",(req, res, next)=>{
 // =============================================================================
 //                           AGREGAR JOYAS
 // =============================================================================
+router.get("/joyeria", (req, res) =>{
+    res.render("joyeria");
+});
+
 router.get("/addJoyas", (req, res) =>{
     res.render("addJoyas");
 });
@@ -135,6 +125,7 @@ router.post("/addJoyas",(req, res, next)=>{
             precio: precio,
             
         });
+
         newJoya.save(next);
         return res.redirect("/joyas");
 });
@@ -209,22 +200,6 @@ router.get("/logout", (req, res) => {
     res.redirect("/");
 });
 
-
-//IMAGENES2
-/*router.get("/addExp",(req,res)=>{
-    res.sendFile(__dirname+"/expedientes/archivo.txt");
-});*/
-router.get("/addExp", (req, res) => {
-    res.render("addExp");
-});
-
-
-router.post("/addExp",function(req, res) {
-    upload(req, res, function(err) {
-        if(err){
-            return res.redirect("/");
-        }});
-    });
 
 // =============================================================================
 //                           PERFIL 

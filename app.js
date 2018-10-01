@@ -6,6 +6,15 @@ var bodyParser = require("body-parser");
 var cookieParser = require("cookie-parser");
 var session = require("express-session");
 var flash = require("connect-flash");
+var multer = require("multer");
+var cloudinary = require("cloudinary");
+
+cloudinary.config({
+    cloud_name: "dn8smt8jk",
+    api_key: "272641451331849",
+    apy_secret: "DL8XIDVAlfGPx06gE3mmygNK3DM"
+});
+
 
 var passport = require("passport");
 
@@ -19,6 +28,9 @@ mongoose.connect("mongodb://Diana:Veronica3@ds121282.mlab.com:21282/ultracero")
 //mongoose.connect("mongodb://localhost:27017/ultrac");
 
 passportsetup();
+
+var uploader = multer({dest: "./uploads"});
+var middleware_upload = uploader.single('joyas');
 
 app.set("port", process.env.PORT || 3000);
 

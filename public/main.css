@@ -36,3 +36,13 @@
     text-align: center;
 
 }
+
+#indexjoyas{
+    display: inline-flex;
+    padding: 5%;
+    margin-left: 8%;
+}
+
+#cardjoyas{
+    margin-left: 5%;
+}
